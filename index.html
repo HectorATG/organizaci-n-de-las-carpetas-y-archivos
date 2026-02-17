@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Notas Web</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script defer src="./js/script.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="./index.html" aria-current="page">Notas</a>
+      <a href="./pages/page2.html">Acerca</a>
+    </nav>
+
+    <main>
+      <h1>Agregar Nota</h1>
+      <p>Escribe un título y el contenido de tu nota.</p>
+    
+      <input type="text" id="noteTitle" placeholder="Título de la nota" />
+      
+      <textarea id="noteInput" rows="4" placeholder="Escribe el contenido..."></textarea>
+      
+      <button onclick="saveNote()">Guardar Nota</button>
+    </main>
+    
+    
+  </body>
+</html>

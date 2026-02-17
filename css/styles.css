@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #19647e;
+  color: #eee5e5;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #37392e;
+}
+
+nav a {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #28afb0;
+  color: #eee5e5;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+nav a[aria-current='page'] {
+  background-color: #284f56;
+}
+
+/* CONTENIDO */
+main {
+  padding: 2rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #ddcecd;
+}
+
+/* FORMULARIO */
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  resize: none;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+}
+
+textarea:focus {
+  box-shadow: 0 0 0 3px #28afb0;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #28afb0;
+  color: #eee5e5;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* TARJETAS DE NOTAS */
+.note {
+  background-color: #284f56;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.note p {
+  margin: 0 0 0.5rem 0;
+  color: #eee5e5;
+}
+
+.note small {
+  color: #ddcecd;
+  font-size: 0.8rem;
+}
+
+/* MENSAJE PERSONALIZADO */
+.custom-message {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #83bfbf;
+  color: #37392e;
+  padding: 0.9rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+  z-index: 999;
+}
+
+/* Animación más suave */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.note textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+}
+
+.note button {
+  font-size: 0.9rem;
+}
+input[type='text'] {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+input[type='text']:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #28afb0;
+}
+
+.note h3 {
+  margin: 0 0 0.5rem 0;
+  color: #eee5e5;
+}
