@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <script defer src="./js/script.js"></script>
   </head>
+
   <body>
     <nav>
       <a href="./index.html" aria-current="page">Notas</a>
@@ -16,14 +17,60 @@
     <main>
       <h1>Agregar Nota</h1>
       <p>Escribe un título y el contenido de tu nota.</p>
-    
+
+      <!-- BUSCADOR -->
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar notas por título o contenido..."
+        oninput="displayNotes()"
+      />
+
+      <!-- FORMULARIO -->
       <input type="text" id="noteTitle" placeholder="Título de la nota" />
-      
-      <textarea id="noteInput" rows="4" placeholder="Escribe el contenido..."></textarea>
-      
+
+      <textarea
+        id="noteInput"
+        rows="4"
+        placeholder="Escribe el contenido..."
+      ></textarea>
+
+      <!-- OPCIONES EXTRA (A + B) -->
+      <div class="note-options">
+        <label class="check">
+          <input id="notePinned" type="checkbox" />
+          <span>Fijar</span>
+        </label>
+
+        <label class="field">
+          <span>Prioridad</span>
+          <select id="notePriority">
+            <option value="baja">Baja</option>
+            <option value="media" selected>Media</option>
+            <option value="alta">Alta</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Color</span>
+          <select id="noteColor">
+            <option value="default" selected>Default</option>
+            <option value="azul">Azul</option>
+            <option value="verde">Verde</option>
+            <option value="amarillo">Amarillo</option>
+            <option value="rojo">Rojo</option>
+            <option value="morado">Morado</option>
+          </select>
+        </label>
+      </div>
+
       <button onclick="saveNote()">Guardar Nota</button>
+
+      <!-- LISTA DE NOTAS -->
+      <section class="notes-section">
+        <h2>Tus notas</h2>
+        <div id="notesContainer"></div>
+      </section>
     </main>
-    
-    
   </body>
 </html>

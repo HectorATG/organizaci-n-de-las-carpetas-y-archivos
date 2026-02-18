@@ -40,7 +40,7 @@ nav a[aria-current='page'] {
 /* CONTENIDO */
 main {
   padding: 2rem;
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
 }
 
@@ -50,6 +50,22 @@ h1 {
 
 p {
   color: #ddcecd;
+}
+
+/* INPUTS */
+input[type='text'] {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+input[type='text']:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #28afb0;
 }
 
 /* FORMULARIO */
@@ -85,6 +101,53 @@ button:hover {
   opacity: 0.9;
 }
 
+/* Opciones de nota (pin/prioridad/color) */
+.note-options,
+.edit-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #ddcecd;
+}
+
+.field select {
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #ddcecd;
+  font-size: 0.95rem;
+}
+
+.check input {
+  transform: scale(1.1);
+}
+
+/* Sección de notas */
+.notes-section {
+  margin-top: 2rem;
+}
+
+.notes-section h2 {
+  margin: 0 0 1rem 0;
+}
+
 /* TARJETAS DE NOTAS */
 .note {
   background-color: #284f56;
@@ -92,16 +155,99 @@ button:hover {
   border-radius: 8px;
   margin-bottom: 1rem;
   animation: fadeIn 0.3s ease;
+  border-left: 6px solid rgba(255, 255, 255, 0.2);
+}
+
+.note h3 {
+  margin: 0;
+  color: #eee5e5;
 }
 
 .note p {
-  margin: 0 0 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 0;
   color: #eee5e5;
 }
 
 .note small {
   color: #ddcecd;
   font-size: 0.8rem;
+}
+
+/* Header + badges */
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #eee5e5;
+}
+
+.badge.pin {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.badge.prio.alta {
+  background: rgba(239, 68, 68, 0.25);
+}
+.badge.prio.media {
+  background: rgba(245, 158, 11, 0.25);
+}
+.badge.prio.baja {
+  background: rgba(34, 197, 94, 0.25);
+}
+
+/* Colores por nota */
+.note-azul {
+  border-left-color: #28afb0;
+}
+.note-verde {
+  border-left-color: #22c55e;
+}
+.note-amarillo {
+  border-left-color: #f59e0b;
+}
+.note-rojo {
+  border-left-color: #ef4444;
+}
+.note-morado {
+  border-left-color: #a855f7;
+}
+.note-default {
+  border-left-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Botones dentro de nota */
+.note-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 0.7rem;
+}
+
+.note textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+}
+
+.note button {
+  font-size: 0.9rem;
 }
 
 /* MENSAJE PERSONALIZADO */
@@ -120,7 +266,7 @@ button:hover {
   z-index: 999;
 }
 
-/* Animación más suave */
+/* Animación */
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -132,34 +278,14 @@ button:hover {
   }
 }
 
-.note textarea {
-  width: 100%;
-  padding: 0.8rem;
-  border-radius: 6px;
-  border: none;
-  margin-bottom: 0.5rem;
-  font-family: inherit;
-}
-
-.note button {
-  font-size: 0.9rem;
-}
-input[type='text'] {
-  width: 100%;
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-input[type='text']:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px #28afb0;
-}
-
-.note h3 {
-  margin: 0 0 0.5rem 0;
-  color: #eee5e5;
+/* Fade-in simple */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
